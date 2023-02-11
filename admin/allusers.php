@@ -184,7 +184,7 @@ session_start();
 
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="table-group-divider">
 
 
                                             <?php

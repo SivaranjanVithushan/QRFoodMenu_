@@ -4,7 +4,7 @@
 $servername = "localhost"; //server
 $username = "root"; //username
 $password = ""; //password
-$dbname = "foodpicky_db_1";  //database
+$dbname = "foodpicky_db1";  //database
 
 // Create connection
 $db = mysqli_connect($servername, $username, $password, $dbname); // connecting 

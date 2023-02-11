@@ -5389,9 +5389,12 @@ label {
   text-transform: capitalize;
   border-radius: 3px;
 }
+
 thead tr th {
   color: #455a64;
   font-weight: 500;
+  border-color: #000;
+  border-width: 1px;
 }
 thead tr th:last-child {
   text-align: right;
@@ -5423,6 +5426,7 @@ tbody tr td:last-child {
 }
 .table {
   margin-bottom: 0;
+  border-spacing: 3px;
 }
 .table .badge {
   text-transform: uppercase;

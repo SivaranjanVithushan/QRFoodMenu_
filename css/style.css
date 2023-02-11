@@ -372,7 +372,7 @@ label {
 }
 
 .navbar {
-    background-image: url("../images/menu-bg.jpg");
+    /* background-image: url("../images/menu-bg.jpg"); */
     padding: .95rem 1rem;
     border-radius: 0;
 }
