@@ -6,63 +6,52 @@ error_reporting(0);
 session_start();
 
 
-if(isset($_POST['submit']))
-        //if upload btn is pressed
-	{
-		if(empty($_POST['c_name'])||empty($_POST['active']))
-		{
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+if (isset($_POST['submit']))
+//if upload btn is pressed
+{
+    if (empty($_POST['c_name']) || empty($_POST['active'])) {
+        $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Must be Fillup!</strong>
 															</div>';
-		}
-	else
-		{
+    } else {
 
-				$fname = $_FILES['file']['name'];
-								$temp = $_FILES['file']['tmp_name'];
-								$fsize = $_FILES['file']['size'];
-								$extension = explode('.',$fname);
-								$extension = strtolower(end($extension));
-								$fnew = uniqid().'.'.$extension;
+        $fname = $_FILES['file']['name'];
+        $temp = $_FILES['file']['tmp_name'];
+        $fsize = $_FILES['file']['size'];
+        $extension = explode('.', $fname);
+        $extension = strtolower(end($extension));
+        $fnew = uniqid() . '.' . $extension;
 
-								$store = "Res_img/category/".basename($fnew);                      // the path to store the upload image
+        $store = "Res_img/category/" . basename($fnew);                      // the path to store the upload image
 
-					if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
-					{
-									if($fsize>=1000000)
-										{
-												$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+        if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
+            if ($fsize >= 1000000) {
+                $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Max Image Size is 1024kb!</strong> Try different Image.
 															</div>';
-										}
+            } else {
+                $sql = "INSERT INTO food_category(c_name,image,active) VALUES('" . $_POST['c_name'] . "','" . $fnew . "','" . $_POST['active'] . "')";
+                mysqli_query($db, $sql);
+                move_uploaded_file($temp, $store);
 
-									else
-										{
-                                                $sql = "INSERT INTO food_category(c_name,image,active) VALUES('".$_POST['c_name']."','".$fnew."','".$_POST['active']."')";
-                                                mysqli_query($db, $sql);
-												move_uploaded_file($temp, $store);
-
-												$success = 	'<div class="alert alert-success alert-dismissible fade show">
+                $success =     '<div class="alert alert-success alert-dismissible fade show">
 								                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 										                 <strong>Congrats!</strong> New Category Added Successfully.</br></div>';
-										}
-					}
-					elseif($extension == '')
-					{
-						$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+            }
+        } elseif ($extension == '') {
+            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>select image</strong>
 															</div>';
-					}
-					else{
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+        } else {
+            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
 															</div>';
-						}
-	   }
+        }
+    }
 }
 
 // if(isset($_POST['submit'] ))
@@ -141,6 +130,7 @@ if(isset($_POST['submit']))
 // }
 
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -149,7 +139,7 @@ if(isset($_POST['submit']))
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
     <title>FoodPicky - Admin Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -168,18 +158,19 @@ if(isset($_POST['submit']))
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                                <!-- Logo -->
+                <!-- Logo -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
-                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width = "25px"/></b>
+                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width="25px" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span><b>Food Picky</b></span>
@@ -201,7 +192,8 @@ if(isset($_POST['submit']))
                         <!-- Search -->
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
                         </li>
                         <!-- Comment -->
                         <li class="nav-item dropdown">
@@ -235,8 +227,8 @@ if(isset($_POST['submit']))
         </div>
         <!-- End header header -->
         <!-- Left Sidebar  -->
-       <!-- Left Sidebar  -->
-       <div class="left-sidebar">
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -251,26 +243,26 @@ if(isset($_POST['submit']))
                             </ul>
                         </li>
                         <li class="nav-label">Options</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false">  <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"> <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="allusers.php">All Users</a></li>
-								<li><a href="add_users.php">Add Users</a></li>
+                                <li><a href="add_users.php">Add Users</a></li>
 
 
                             </ul>
                         </li>
-                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
+                                <li><a href="all_menu.php">All Menues</a></li>
                                 <li><a href="add_category.php">Add Category</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_menu.php">Add Menu</a></li>
 
 
                             </ul>
                         </li>
-						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_orders.php">All Orders</a></li>
+                                <li><a href="all_orders.php">All Orders</a></li>
 
                             </ul>
                         </li>
@@ -294,107 +286,105 @@ if(isset($_POST['submit']))
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-					      <div class="row">
-					      <div class="container-fluid">
-                         <!-- Start Page Content -->
+                <div class="row">
+                    <div class="container-fluid">
+                        <!-- Start Page Content -->
 
 
-									<?php
-									        echo $error;
-									        echo $success;
-                  ?>
+                        <?php
+                        echo $error;
+                        echo $success;
+                        ?>
 
 
-					    <div class="col-lg-12">
-                        <div class="card card-outline-primary">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Add New Category</h4>
-                            </div>
-                            <div class="card-body">
-                                <form action='' method='post' enctype="multipart/form-data" >
-                                    <div class="form-body">
+                        <div class="col-lg-12">
+                            <div class="card card-outline-primary">
+                                <div class="card-header">
+                                    <h4 class="m-b-0 text-white">Add New Category</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action='' method='post' enctype="multipart/form-data">
+                                        <div class="form-body">
 
-                                        <hr>
-                                        <div class="row p-t-20">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Category</label>
-                                                    <input type="text" name="c_name" class="form-control" placeholder="Category Name">
-                                                   </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Active </label>
-                                                    <input type="text" name="active" class="form-control" placeholder="Yes/No">
-                                                   </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group has-danger">
-                                                    <label class="control-label">Image</label>
-                                                    <input type="file" name="file"  id="lastName" class="form-control form-control-danger" placeholder="12n">
+                                            <hr>
+                                            <div class="row p-t-20">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Category</label>
+                                                        <input type="text" name="c_name" class="form-control" placeholder="Category Name">
                                                     </div>
+                                                </div>
+                                                <!--/span-->
                                             </div>
-                                        </div>
-                                    <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="Save">
-                                        <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
-                                    </div>
-                                </form>
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Active </label>
+                                                        <input type="text" name="active" class="form-control" placeholder="Yes/No">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group has-danger">
+                                                        <label class="control-label">Image</label>
+                                                        <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions ">
+                                                <a href="dashboard.php" class="btn Btn btn-inverse">Cancel</a>
+                                                <input type="submit" name="submit" class="btn Btn btn-success" value="Save">
+
+                                            </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-
-					   <div class="col-12">
-                        <div class="card">
+                    <div class="col-12">
+                        <div class="card card-outline-primary">
                             <div class="card-body">
-                                <h4 class="card-title">Listed Categories</h4>
+                                <h4 class="card-title card-header">Listed Categories</h4>
 
                                 <div class="table-responsive m-t-40">
-                                    <table id="myTable" class="table table-bordered table-striped" >
+                                    <table id="myTable" class="table table-bordered table-striped">
                                         <thead style="text-align: center">
                                             <tr>
                                                 <th>ID#</th>
                                                 <th>Category Name</th>
                                                 <th>Active</th>
                                                 <th>Image</th>
-												<th style="text-align: center">Action</th>
+                                                <th style="text-align: center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody style="text-align: center">
 
 
-											<?php
-												$sql="SELECT * FROM food_category order by c_id desc";
-												$query=mysqli_query($db,$sql);
+                                            <?php
+                                            $sql = "SELECT * FROM food_category order by c_id desc";
+                                            $query = mysqli_query($db, $sql);
 
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="7"><center>No Categories-Data!</center></td>';
-														}
-													else
-														{
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																			echo ' <tr><td>'.$rows['c_id'].'</td>
-																				    <td>'.$rows['c_name'].'</td>
-                                                                                    <td>'.$rows['active'].'</td>
+                                            if (!mysqli_num_rows($query) > 0) {
+                                                echo '<td colspan="7"><center>No Categories-Data!</center></td>';
+                                            } else {
+                                                while ($rows = mysqli_fetch_array($query)) {
+                                                    echo ' <tr><td>' . $rows['c_id'] . '</td>
+																				    <td>' . $rows['c_name'] . '</td>
+                                                                                    <td>' . $rows['active'] . '</td>
                                                                                     <td style="text-align: center"><div class="col-md-3 col-lg-8 m-b-10">
-                                                                                    <img src="Res_img/category/'.$rows['image'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" />
+                                                                                    <img src="Res_img/category/' . $rows['image'] . '" class="img-responsive  radius" style="max-height:100px;max-width:150px;" />
                                                                                     </div></td>																	
-                                                                                    <td style="text-align: center"><a href="delete_category.php?cat_del='.$rows['c_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
-																					<a href="update_category.php?cat_upd='.$rows['c_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                                                    <td style="text-align: center"><a href="delete_category.php?cat_del=' . $rows['c_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+																					<a href="update_category.php?cat_upd=' . $rows['c_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																					</td></tr>';
-																		}
-														}
+                                                }
+                                            }
 
 
-											?>
+                                            ?>
 
 
 
@@ -403,7 +393,7 @@ if(isset($_POST['submit']))
                                 </div>
                             </div>
                         </div>
-				    </div>
+                    </div>
                 </div>
                 <!-- End PAge Content -->
             </div>

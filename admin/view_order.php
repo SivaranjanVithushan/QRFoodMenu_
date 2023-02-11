@@ -39,6 +39,21 @@ session_start();
             popUpWin = open(URLStr, 'popUpWin', 'toolbar=no,fullscreen=yes, location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes');
         }
     </script>
+
+    <style type="text/css">
+        table,tr{
+            border-collapse:collapse;
+            
+            width: 100%;
+            color: #373A3c;
+            font-family: monospace;
+            font-size: 16px;
+            text-align: left;
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6;
+        }
+    </style>
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -179,7 +194,7 @@ session_start();
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All User Orders List</h4>
+                                <h4 class="card-title card-header">View Users Orders</h4>
 
                                 <div class="table-responsive m-t-20">
                                     <table id="myTable" class="table table-bordered table-striped">
@@ -196,12 +211,7 @@ session_start();
                                                 <td>
                                                     <center><?php echo $rows['username']; ?></center>
                                                 </td>
-                                                <td>
-                                                    <center>
-                                                        <a href="javascript:void(0);" target="_new" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
-                                                            <button type="button" class="btn btn-primary">Take Action</button></a>
-                                                    </center>
-                                                </td>
+
 
 
                                             </tr>
@@ -209,13 +219,6 @@ session_start();
                                                 <td><strong>Ordered Dishes:</strong></td>
                                                 <td>
                                                     <center><?php echo $rows['title']; ?></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
-                                                            <button type="button" class="btn btn-primary">View User Details</button></a>
-
-                                                    </center>
                                                 </td>
 
                                             </tr>
@@ -285,18 +288,18 @@ session_start();
                                                 <?php
                                                 }
                                                 ?>
-
-
                                             </tr>
-
-
-
-
-
-
-
                                         </tbody>
                                     </table>
+                                    <div class="btn-lg subBtn">
+
+                                        <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
+                                            <button type="button" class="btn Btn">View User Details</button></a>
+
+                                        <a href="javascript:void(0);" target="_new" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
+                                            <button type="button" class="btn Btn">Take Action</button></a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

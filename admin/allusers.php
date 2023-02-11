@@ -168,7 +168,7 @@ session_start();
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All Registered Users</h4>
+                                <h4 class="card-title card-header">All Registered Users</h4>
 
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
