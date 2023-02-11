@@ -161,14 +161,12 @@ session_start();
                 <div class="row">
                     <div class="col-12">
 
-
-
-
-
-
 						     <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All Menu Collection</h4>
+                    
+                                    <h4 class="card-title card-header card-outline-primary">All Menu Collection</h4>
+                                
+
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
 
                                 <div class="table-responsive m-t-40">

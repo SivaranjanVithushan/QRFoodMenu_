@@ -5424,9 +5424,17 @@ tbody tr td:last-child {
   border-bottom: 1px solid #e7e7e7;
   font-weight: 600;
 }
+table,th,td{
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-style: solid;
+  border: thin;
+}
+tr{
+  background: white;
+}
 .table {
   margin-bottom: 0;
-  border-spacing: 3px;
 }
 .table .badge {
   text-transform: uppercase;
@@ -5461,6 +5469,7 @@ tbody tr td:last-child {
 .table td,
 .table th {
   padding: 0.55rem;
+  border: 1px solid #064d55;
 }
 .table .round-img img {
   width: 38px;
