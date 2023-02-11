@@ -29,8 +29,26 @@ session_start();
     <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<<<<<<< Updated upstream
     <script language="javascript" type="text/javascript">
         var popUpWin = 0;
+=======
+<<<<<<< HEAD
+<script language="javascript" type="text/javascript">
+var popUpWin=0;
+// function popUpWindow(URLStr, left, top, width, height)
+// {
+//  if(popUpWin)
+// {
+// if(!popUpWin.closed) popUpWin.close();
+// }
+// popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+600+',height='+600+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+// }
+=======
+    <script language="javascript" type="text/javascript">
+        var popUpWin = 0;
+>>>>>>> 54febcbfccf1a0e32ccb7f8ef91d6f98baaca2a9
+>>>>>>> Stashed changes
 
         function popUpWindow(URLStr, left, top, width, height) {
             if (popUpWin) {
