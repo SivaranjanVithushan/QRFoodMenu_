@@ -291,7 +291,7 @@ session_start();
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="btn-lg subBtn">
+                                    <div class=" form-actions btn-lg subBtn">
 
                                         <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
                                             <button type="button" class="btn Btn">View User Details</button></a>
