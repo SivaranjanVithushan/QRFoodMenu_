@@ -306,8 +306,9 @@ if(isset($_POST['submit'] ))
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="Save">
-                                        <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                                        <a href="dashboard.php" class="btn Btn btn-inverse">Cancel</a>
+                                        <input type="submit" name="submit" class="btn Btn btn-success" value="Save">
+                                        
                                     </div>
                                 </form>
                             </div>
