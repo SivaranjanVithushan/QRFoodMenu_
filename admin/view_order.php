@@ -32,7 +32,6 @@ session_start();
 
     <script language="javascript" type="text/javascript">
         var popUpWin = 0;
-
         function popUpWindow(URLStr, left, top, width, height) {
             if (popUpWin) {
                 if (!popUpWin.closed) popUpWin.close();
@@ -217,7 +216,7 @@ session_start();
 
                                             </tr>
                                             <tr>
-                                                <td><strong>Ordered Dishes:</strong></td>
+                                                <td><strong>Ordered Food:</strong></td>
                                                 <td>
                                                     <center><?php echo $rows['title']; ?></center>
                                                 </td>
