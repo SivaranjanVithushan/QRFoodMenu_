@@ -6,58 +6,46 @@ error_reporting(0);
 session_start();
 
 
-if(isset($_POST['submit'] ))
-{
-    if(empty($_POST['c_name'])||empty($_POST['actives']))
-	{
-			$error = '<div class="alert alert-danger alert-dismissible fade show">
+if (isset($_POST['submit'])) {
+    if (empty($_POST['c_name']) || empty($_POST['actives'])) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>field Required!</strong>															</div>';
-	}
-	else
-	{
+    } else {
         $fname = $_FILES['file']['name'];
-		$temp = $_FILES['file']['tmp_name'];
+        $temp = $_FILES['file']['tmp_name'];
         $fsize = $_FILES['file']['size'];
-        $extension = explode('.',$fname);
+        $extension = explode('.', $fname);
         $extension = strtolower(end($extension));
-        $fnew = uniqid().'.'.$extension;
+        $fnew = uniqid() . '.' . $extension;
 
-        $store = "Res_img/category/".basename($fnew);                      // the path to store the upload image
-        if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
-					{
-					    if($fsize>=1000000)
-						{
-							$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+        $store = "Res_img/category/" . basename($fnew);                      // the path to store the upload image
+        if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
+            if ($fsize >= 1000000) {
+                $error =     '<div class="alert alert-danger alert-dismissible fade show">
 									    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 										<strong>Max Image Size is 1024kb!</strong> Try different Image.
 										</div>';
-						}
-						else
-                        {
-                            $sql = "update food_category set c_name ='$_POST[c_name]',active='$_POST[actives]' ,image='$fnew' where c_id='$_GET[cat_upd]'";
-                            mysqli_query($db, $sql);
-                            move_uploaded_file($temp, $store);
-                            $success = 	'<div class="alert alert-success alert-dismissible fade show">
+            } else {
+                $sql = "update food_category set c_name ='$_POST[c_name]',active='$_POST[actives]' ,image='$fnew' where c_id='$_GET[cat_upd]'";
+                mysqli_query($db, $sql);
+                move_uploaded_file($temp, $store);
+                $success =     '<div class="alert alert-success alert-dismissible fade show">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <strong>Updated</strong> Successfully!</br></div>';
-                    
-                        }
-                    }
-					elseif($extension == '')
-					{
-						$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+            }
+        } elseif ($extension == '') {
+            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>select image</strong>
 															</div>';
-					}
-					else{
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+        } else {
+            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
 															</div>';
-						}
         }
+    }
 }
 
 ?>
@@ -89,7 +77,8 @@ if(isset($_POST['submit'] ))
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
@@ -100,7 +89,7 @@ if(isset($_POST['submit'] ))
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
-                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width = "25px"/></b>
+                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width="25px" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span><b>Food Picky</b></span>
@@ -124,13 +113,15 @@ if(isset($_POST['submit'] ))
                                         <!-- Contact -->
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
+                                            </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
+                                                <input type="email" class="form-control" placeholder="Enter email">
+                                            </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
                                             </div>
-                                                <button type="submit" class="btn btn-info">Submit</button>
+                                            <button type="submit" class="btn btn-info">Submit</button>
                                         </form>
                                     </li>
                                 </ul>
@@ -144,60 +135,15 @@ if(isset($_POST['submit'] ))
                         <!-- Search -->
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
                         </li>
-                        <!-- Comment -->
-                        <li class="nav-item dropdown">
 
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Comment -->
                         <!-- Messages -->
                         <li class="nav-item dropdown">
 
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
+                            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
                                 <ul>
                                     <li>
@@ -256,8 +202,8 @@ if(isset($_POST['submit'] ))
             </nav>
         </div>
         <!-- End header header -->
-       <!-- Left Sidebar  -->
-       <div class="left-sidebar">
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -272,26 +218,26 @@ if(isset($_POST['submit'] ))
                             </ul>
                         </li>
                         <li class="nav-label">Options</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false">  <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"> <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="allusers.php">All Users</a></li>
-								<li><a href="add_users.php">Add Users</a></li>
+                                <li><a href="add_users.php">Add Users</a></li>
 
 
                             </ul>
                         </li>
-                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
+                                <li><a href="all_menu.php">All Menues</a></li>
                                 <li><a href="add_category.php">Add Category</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="add_menu.php">Add Menu</a></li>
 
 
                             </ul>
                         </li>
-						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_orders.php">All Orders</a></li>
+                                <li><a href="all_orders.php">All Orders</a></li>
 
                             </ul>
                         </li>
@@ -308,7 +254,8 @@ if(isset($_POST['submit'] ))
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Update Category</h3> </div>
+                    <h3 class="text-primary">Update Category</h3>
+                </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Options</a></li>
@@ -320,58 +267,58 @@ if(isset($_POST['submit'] ))
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-					<div class="row">
-					<div class="container-fluid">
-                <!-- Start Page Content -->
-									<?php
-									        echo $error;
-									        echo $success; 
-                                    ?>
-					    <div class="col-lg-12">
-                        <div class="card card-outline-primary">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Update Restaurant Category</h4>
-                            </div>
-                            <div class="card-body">
-                                <form action='' method='post'  enctype="multipart/form-data" >
-                                    <div class="form-body">
-                                        <?php $ssql ="select * from food_category where c_id='$_GET[cat_upd]'";
-													$res=mysqli_query($db, $ssql);
-													$row=mysqli_fetch_array($res);?>
-                                        <hr>
-                                        <div class="row p-t-20">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Category</label>
-                                                    <input type="text" name="c_name" value="<?php echo $row['c_name'];  ?>" class="form-control" placeholder="Category Name">
-                                                   </div>
-                                            </div>
-                                            <!--/span-->
-                                    </div>
-                                    <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Active </label>
-                                                    <input type="text" name="actives" value="<?php echo $row['active']; ?>" class="form-control" placeholder="Yes/No">
-                                                   </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group has-danger">
-                                                    <label class="control-label">Image</label>
-                                                    <input type="file" name="file"  id="lastName" class="form-control form-control-danger" placeholder="12n">
+                <div class="row">
+                    <div class="container-fluid">
+                        <!-- Start Page Content -->
+                        <?php
+                        echo $error;
+                        echo $success;
+                        ?>
+                        <div class="col-lg-12">
+                            <div class="card card-outline-primary">
+                                <div class="card-header">
+                                    <h4 class="m-b-0 text-white">Update Restaurant Category</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action='' method='post' enctype="multipart/form-data">
+                                        <div class="form-body">
+                                            <?php $ssql = "select * from food_category where c_id='$_GET[cat_upd]'";
+                                            $res = mysqli_query($db, $ssql);
+                                            $row = mysqli_fetch_array($res); ?>
+                                            <hr>
+                                            <div class="row p-t-20">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Category</label>
+                                                        <input type="text" name="c_name" value="<?php echo $row['c_name'];  ?>" class="form-control" placeholder="Category Name">
                                                     </div>
+                                                </div>
+                                                <!--/span-->
                                             </div>
-                                        </div>
-                                    <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="Save">
-                                        <a href="dashboard.php" class="btn btn-inverse">Back</a>
-                                    </div>
-                                </form>
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Active </label>
+                                                        <input type="text" name="actives" value="<?php echo $row['active']; ?>" class="form-control" placeholder="Yes/No">
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group has-danger">
+                                                        <label class="control-label">Image</label>
+                                                        <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <input type="submit" name="submit" class="btn btn-success" value="Save">
+                                                <a href="dashboard.php" class="btn btn-inverse">Back</a>
+                                            </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 </div>
                 <!-- End PAge Content -->
