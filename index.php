@@ -56,7 +56,7 @@ session_start(); //start temp session until logout/browser closed
         <!-- /.navbar -->
     </header>
     <!-- banner part starts -->
-    <section class="hero bg-image" data-image-src="images/img/main.jpeg" >
+    <section class="hero bg-image" data-image-src="images/img/bg.jpg" >
         <div class="hero-inner">
             <div class="container text-center hero-text font-white">
                 <h1>Choose it & Enjoy your meals! </h1>
