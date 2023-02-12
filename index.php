@@ -238,13 +238,14 @@ session_start(); //start temp session until logout/browser closed
             <div class="row">
                 <div class="restaurant-listing">
                     <?php  //fetching records from table and filter using html data-filter tag
-                    $ress = mysqli_query($db, "select * from restaurant");
+                    $ress = mysqli_query($db, "select * from food");
                     while ($rows = mysqli_fetch_array($ress)) {
                         // fetch records from res_category table according to catgory ID
-                        $query = mysqli_query($db, "select * from res_category where c_id='" . $rows['c_id'] . "' ");
+                        $query = mysqli_query($db, "select * from food_category where c_id='" . $rows['c_id'] . "' ");
                         $rowss = mysqli_fetch_array($query);
 
                         echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all ' . $rowss['c_name'] . '">
+                        
 														<div class="restaurant-wrap">
 															<div class="row">
 																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
