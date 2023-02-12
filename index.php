@@ -155,7 +155,7 @@ session_start(); //start temp session until logout/browser closed
             <div class="row">
                 <div class="col-sm-4">
                     <div class="title-block pull-left">
-                        <h4>Featured Restaurants</h4>
+                        <h4>Categories</h4>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -178,48 +178,86 @@ session_start(); //start temp session until logout/browser closed
                 </div>
             </div>
             <!-- restaurants listing starts -->
-            <div class="row">
-                <div class="restaurant-listing">
-                    <?php  //fetching records from table and filter using html data-filter tag
-                    $ress = mysqli_query($db, "select * from food");
-                    while ($rows = mysqli_fetch_array($ress)) {
-                        // fetch records from res_category table according to catgory ID
-                        $query = mysqli_query($db, "select * from food_category where c_id='" . $rows['c_id'] . "' ");
-                        $rowss = mysqli_fetch_array($query);
+            <!-- <div class="row">
+                <!-- <div class="restaurant-listing">
+                     <!-- <?php   //fetching records from table and filter using html data-filter tag --> --> -->
+                    // $ress = mysqli_query($db, "select * from food");
+                    // while ($rows = mysqli_fetch_array($ress)) {
+                    //     // fetch records from res_category table according to catgory ID
+                    //     $query = mysqli_query($db, "select * from food_category where c_id='" . $rows['c_id'] . "' ");
+                    //     $rowss = mysqli_fetch_array($query);
 
-                        echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all ' . $rowss['c_name'] . '">
+                    //     echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all ' . $rowss['c_name'] . '">
                         
-														<div class="restaurant-wrap">
-															<div class="row">
-																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-																	<a class="restaurant-logo" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo"> </a>
-																</div>
-																<!--end:col -->
-																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-																	<h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '" >' . $rows['title'] . '</a></h5> <span>' . $rows['address'] . '</span>
-																	<div class="bottom-part">
-																		<div class="cost"><i class="fa fa-check"></i> Min &#8377; 100</div>
-																		<div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
-																		<div class="ratings"> <span>
-																				<i class="fa fa-star"></i>
-																				<i class="fa fa-star"></i>
-																				<i class="fa fa-star"></i>
-																				<i class="fa fa-star"></i>
-																				<i class="fa fa-star-o"></i>
-																			</span> (153) </div>
-																	</div>
-																</div>
-																<!-- end:col -->
-															</div>
-															<!-- end:row -->
-														</div>
-														<!--end:Restaurant wrap -->
-													</div>';
-                    }
+					// 									<div class="restaurant-wrap">
+					// 										<div class="row">
+					// 											<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
+					// 												<a class="restaurant-logo" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo"> </a>
+					// 											</div>
+					// 											<!--end:col -->
+					// 											<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
+					// 												<h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '" >' . $rows['title'] . '</a></h5> <span>' . $rows['address'] . '</span>
+					// 												<div class="bottom-part">
+					// 													<div class="cost"><i class="fa fa-check"></i> Min &#8377; 100</div>
+					// 													<div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
+					// 													<div class="ratings"> <span>
+					// 															<i class="fa fa-star"></i>
+					// 															<i class="fa fa-star"></i>
+					// 															<i class="fa fa-star"></i>
+					// 															<i class="fa fa-star"></i>
+					// 															<i class="fa fa-star-o"></i>
+					// 														</span> (153) </div>
+					// 												</div>
+					// 											</div>
+					// 											<!-- end:col -->
+					// 										</div>
+					// 										<!-- end:row -->
+					// 									</div>
+					// 									<!--end:Restaurant wrap -->
+					// 								</div>';
+                    // }
                     ?>
-                </div>
-            </div>
+                </div> -->
+            </div> -->
             <!-- restaurants listing ends -->
+        </div>
+    </section>
+    <section class="page-section" id="menu">
+        <div id="menu-field" class="card-deck">
+                <?php 
+
+
+
+
+                    include("connection/connect.php"); 
+                    $res = mysqli_query($db, "select * from food");
+                    // $qry = $conn->query("SELECT * FROM  food order by rand() ");
+
+                    
+                    while($row = $res->fetch_assoc()):
+                    ?>
+                    <?php "<br>" ?>
+                    <div class="col-lg-3" style="margin-bottom: 20px;">
+                     <div class="card menu-item ">
+                  
+                        <img src="admin/Res_img/dishes/<?php echo $row['img'] ?>" class="card-img-top" alt="...">
+                       
+                        
+                        
+                        
+                        <div class="card-body">
+                          <h5 class="card-title"><?php echo $row['title'] ?></h5>
+                          <p class="card-text truncate"><?php echo $row['slogan'] ?></p>
+                          <h6 class="card-title">Price: $<?php echo $row['price'] ?></h6>
+                          <div class="text-center">
+                              <button class="btn btn-sm btn-outline-primary view_prod btn-block" data-id=<?php echo $row['id'] ?>><i class="fa fa-eye"></i> View</button>
+                              
+                          </div>
+                        </div>
+                        
+                      </div>
+                      </div>
+                    <?php endwhile; ?>
         </div>
     </section>
 
