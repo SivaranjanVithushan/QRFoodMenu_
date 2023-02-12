@@ -223,7 +223,7 @@ session_start(); //start temp session until logout/browser closed
                                 <li><a href="#" class="selected" data-filter="*">all</a> </li>
                                 <?php
                                 // display categories here
-                                $res = mysqli_query($db, "select * from res_category");
+                                $res = mysqli_query($db, "select * from food_category");
                                 while ($row = mysqli_fetch_array($res)) {
                                     echo '<li><a href="#" data-filter=".' . $row['c_name'] . '"> ' . $row['c_name'] . '</a> </li>';
                                 }
