@@ -563,7 +563,7 @@ label {
 .step2:after {
     position: absolute;
     content: "";
-    right: -58%;
+    right: -100%;
     top: -20%;
     width: 130px;
     height: 32px;
@@ -573,8 +573,8 @@ label {
 .step2:after {
     background: url(../images/arrow-dotted.png);
     height: 25px;
-    right: -95%;
-    top: -15%;
+    right: -78%;
+    top: -12%;
 }
 
 @media (max-width: 568px) and (min-width: 280px) {
