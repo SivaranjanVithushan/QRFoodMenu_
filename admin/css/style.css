@@ -4890,6 +4890,7 @@ table.dataTable thead .sorting::after {
   transition: all 0.2s linear;
   text-align: center;
   float: right;
+
 }
 
 .chat-widget .bottom_wrapper .send_message .text {
@@ -7539,9 +7540,9 @@ tr {
 }
 
 .dark-browse-input-box {
-  border-radius: 0;
-  -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
