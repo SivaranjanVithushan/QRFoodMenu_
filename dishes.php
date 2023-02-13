@@ -168,7 +168,7 @@ include_once 'product-action.php'; //including controller
                                         <?php echo $item_total; ?>
                                     </strong></h3>
                                 <p>Free Shipping</p>
-                                <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check" class="btn theme-btn btn-lg">Checkout</a>
+                                <a href="checkout.php?res_id=<?php echo $_GET['c_id']; ?>&action=check" class="btn theme-btn btn-lg">Checkout</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@ include_once 'product-action.php'; //including controller
                         </div>
                         <div class="collapse in" id="popular2">
                             <?php // display values and item of food/dishes
-                            $stmt = $db->prepare("select * from dishes where rs_id='$_GET[res_id]'");
+                            $stmt = $db->prepare("select * from dishes where c_id='$_GET[c_id]'");
                             $stmt->execute();
                             $products = $stmt->get_result();
                             if (!empty($products)) {
@@ -201,7 +201,7 @@ include_once 'product-action.php'; //including controller
                                     <div class="food-item">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-8">
-                                                <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                                <form method="post" action='dishes.php?res_id=<?php echo $_GET['c_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                                     <div class="rest-logo pull-left">
                                                         <a class="restaurant-logo pull-left" href="#">
                                                             <?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="Food logo">'; ?>
