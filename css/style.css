@@ -599,7 +599,7 @@ label {
 *   Detect location
 ============================*/
 
-.location-match {
+/* .location-match {
     padding: 20px 0;
     border-bottom: 1px solid #e6e6e6;
 }
@@ -615,7 +615,7 @@ label {
 .location-match a:hover {
     color: #43434c;
 }
-
+ */
 
 /* ==========================
 *  Popular block
@@ -898,6 +898,7 @@ label {
 }
 
 
+
 /*============================================
 * Modal 
 =============================================*/
@@ -967,71 +968,10 @@ button.close span {
 }
 
 
-/*-----------------------------------  
-How it works section
------------------------------------*/
-
-.how-it-works {
-    background-image: url(../images/city.png), url(../images/pattern.png);
-    background-repeat: repeat-x, repeat;
-    background-position: bottom, center;
-    padding: 90px 0;
-    position: relative;
-}
-
-.how-it-works:after {
-    position: absolute;
-    right: 20px;
-    top: -30px;
-    background: url(../images/peanuts.png);
-    width: 150px;
-    height: 51px;
-    content: "";
-}
-
-.how-it-works .text-xs-center>h2 {
-    color: #d8bea5;
-    margin-bottom: 50px;
-}
-
-.how-it-works-wrap h2 {
-    margin-bottom: 10px;
-    font-size: 21px;
-}
-
-.how-it-works-wrap>p {
-    font-weight: 300;
-}
-
-.how-it-works-steps {
-    position: relative;
-    padding: 0 2.1rem;
-}
-
-.how-it-works .how-middle {
-    margin-top: 70px;
-}
-
-.how-it-works p.pay-info {
-    font-size: 16px;
-    color: #d8bea5;
-    margin-top: 25px;
-    text-align: center;
-}
-
-.how-it-works h3 {
-    color: #fff
-}
-
 
 /*-----------------------------------  
 Steps
 -----------------------------------*/
-
-.how-it-works p {
-    color: #9c9da5;
-}
-
 .step .icon {
     position: relative;
     width: 86px;
@@ -1124,9 +1064,6 @@ Steps
     }
 }
 
-@media (min-width: 1200px) {
-    
-}
 
 
 /****** featured restaurants block *******/
@@ -1177,7 +1114,7 @@ Steps
 
 @media (min-width: 320px) and (max-width: 543px) {
     .restaurant-wrap {
-        /* text-align:center */
+        text-align:center
     }
     .featured-restaurants .restaurant-logo img {
         width: 85px;
@@ -1291,129 +1228,6 @@ Steps
 @media (min-width: 1200px) {}
 
 
-/*-----------------------------------  
-App section
------------------------------------*/
-
-.app-section {
-    padding-top: 35px;
-    position: relative
-}
-
-.app-section:after {
-    content: "";
-    background: url(../images/city-2.png) center bottom;
-    background-color: #f30;
-    display: block;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    background-repeat: repeat-x;
-}
-
-.app-wrap {
-    position: relative;
-    z-index: 2
-}
-
-@media (min-width: 280px) and (max-width: 568px) {
-    .app-wrap {
-        padding-bottom: 30px
-    }
-}
-
-.app-wrap figure {
-    margin: 0;
-    text-align: center;
-}
-
-.app-wrap .left-text {
-    padding-top: 110px;
-}
-
-.app-wrap .left-text h3,
-.app-wrap .left-text p {
-    color: #fff;
-}
-
-
-/* ==========================
-*  Download app buttons
-============================*/
-
-.app-btn {
-    color: #FFFFFF;
-    float: left;
-    margin-right: 15px;
-    background: #81858b;
-    margin-top: 5px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 2px;
-    transition: all .3s;
-}
-
-.app-btn i {
-    font-size: 38px;
-    line-height: 50px;
-    margin: 0px;
-    padding: 0 18px;
-}
-
-.app-btn .pull-right {
-    padding: 8px 25px 8px 10px;
-}
-
-.app-btn .text {
-    display: block;
-    font-size: 12px;
-    line-height: 1;
-}
-
-.app-btn:hover,
-.app-btn:active,
-.app-btn:focus {
-    color: #FFFFFF;
-    background: #111111;
-}
-
-.android-button {
-    background: #82b21c;
-}
-
-@media (min-width: 348px) and (max-width: 767px) {
-    .app-section {
-        padding: 55px 0;
-    }
-    .text-img-block figure {
-        display: none
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .app-wrap .left-text {
-        padding-top: 100px;
-        font-size: 80%;
-    }
-    .app-btn i {
-        font-size: 28px;
-        line-height: 41px;
-        margin: 0px;
-        padding: 0 18px;
-    }
-    .app-btn {
-        padding-right: 5px
-    }
-    .app-btn .pull-right {
-        padding: 7px 14px 0 5px
-    }
-    .app-btn i {
-        padding: 0 10px;
-    }
-}
 
 
 /* ==========================
@@ -2029,7 +1843,7 @@ a[aria-expanded=false] .fa-angle-down {
 * Rstaurants 
 *
 ==============================*/
-
+/* 
 .restaurant-entry {
     border: 1px solid #eaebeb;
     border-radius: 2px;
@@ -2103,7 +1917,7 @@ a[aria-expanded=false] .fa-angle-down {
         border-top: 1px solid #eaebeb
     }
 }
-
+ */
 
 /*==============================
 * TAGS
@@ -2269,7 +2083,7 @@ a[aria-expanded=false] .fa-angle-down {
 /*==================================
 * MAPS
 *=================================*/
-
+/* 
 .map-wrapper {
     width: 43%;
     display: inline-block;
@@ -2428,7 +2242,7 @@ a[aria-expanded=false] .fa-angle-down {
     #map-result-section {
         width: 100%;
     }
-}
+} */
 
 
 .slider {
