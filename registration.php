@@ -9,7 +9,7 @@ include("connection/connect.php");
 if (isset($_POST['submit'])) //if submit btn is pressed
 {
     if (
-        empty($_post['username']) ||
+        empty($_POST['username']) ||
         empty($_POST['firstname']) ||  //fetching and find if its empty
         empty($_POST['lastname']) ||
         empty($_POST['email']) ||

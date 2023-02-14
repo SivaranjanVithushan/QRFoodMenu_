@@ -555,9 +555,9 @@ label {
     font-size: 21px;
 }
 
-.step-item h4 span {
-    color: #008080;
-}
+/* .step-item h4 span {
+    color: #fff;
+} */
 
 .step1:after,
 .step2:after {
@@ -658,6 +658,17 @@ label {
 
 .food-item-wrap .product-name {
     margin-bottom: 20px;
+}
+
+.truncate{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: small;
+    color: #000000cf;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .food-item-wrap .content {
