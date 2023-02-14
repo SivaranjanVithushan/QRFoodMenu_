@@ -40,7 +40,8 @@ include_once 'product-action.php'; //including controller
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="dishes.php"><i class="fa fa-shopping-cart"></i> Cart<span class="sr-only"></span></a> </li>
+                        
 
                         <?php
                         if (empty($_SESSION["user_id"])) {
@@ -60,60 +61,9 @@ include_once 'product-action.php'; //including controller
         <!-- /.navbar -->
     </header>
     <div class="page-wrapper">
-        <!-- top Links -->
-        <div class="top-links">
-            <div class="container">
-                <ul class="row links">
-
-                    <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
-                            Restaurant</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick your favourite dishes</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Get delivered & Pay</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- end:Top links -->
-        <!-- start: Inner page hero -->
-        <!--<?php $ress = mysqli_query($db, "select * from restaurant where rs_id='$_GET[res_id]'");
-            $rows = mysqli_fetch_array($ress);
-
-            ?>
-            <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
-                <div class="profile">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
-                                <div class="image-wrap">
-                                    <figure><?php echo '<img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo">'; ?></figure>
-                                </div>
-                            </div>
-                            
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
-                                <div class="pull-left right-text white-txt">
-                                    <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
-                                    <p><?php echo $rows['address']; ?></p>
-                                    <ul class="nav nav-inline">
-                                        <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min &#8377 100</a> </li>
-                                        <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i> 30 mins</a> </li>
-                                        <li class="nav-item ratings">
-                                            <a class="nav-link" href="#"> <span>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    </span> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-        <!-- end:Inner page hero -->
+        
+        
+        
         <div class="breadcrumb">
             <div class="container">
 
@@ -164,7 +114,7 @@ include_once 'product-action.php'; //including controller
                         <div class="widget-body">
                             <div class="price-wrap text-xs-center">
                                 <p>Total Amount</p>
-                                <h3 class="value"><strong>&#8377;
+                                <h3 class="value"><strong>Rs.
                                         <?php echo $item_total; ?>
                                     </strong></h3>
                                 <p>Free Shipping</p>
@@ -225,7 +175,6 @@ include_once 'product-action.php'; //including controller
                                                 </span>
                                                 <input class="b-r-0" type="text" name="quantity" style="margin-left:30px;" value="1" size="2" />
                                                 <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
-                                            </div>
                                             </form>
                                         </div>
                                         <!-- end:row -->
@@ -250,103 +199,7 @@ include_once 'product-action.php'; //including controller
         <!-- end:Container -->
         
         <!-- start: FOOTER -->
-        <footer class="footer" >
-            <div class="container">
-                <!-- top footer statrs -->
-                <div class="row top-footer">
-                    <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Choose it &amp;
-                            Enjoy your meals! </span>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 about color-gray">
-                        <h5>About Us</h5>
-                        <ul>
-                            <li><a href="#">Our Mission</a></li>
-                            <li><a href="#">Social Media</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Join us Today</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                        <h5>How it Works?</h5>
-                        <ul>
-                            <li><a href="#">Enter your location</a></li>
-                            <li><a href="#">Choose the restaurant</a></li>
-                            <li><a href="#">Choose your dishes</a></li>
-                            <li><a href="#">Get delivered</a></li>
-                            <li><a href="#">Pay on delivery</a></li>
-                            <li><a href="#">Enjoy your meals :)</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 pages color-gray">
-                        <h5>Legal</h5>
-                        <ul>
-                            <li><a href="#">Terms & Conditions</a> </li>
-                            <li><a href="#">Refund & Cancellation</a> </li>
-                            <li><a href="#">Privacy Policy</a> </li>
-                            <li><a href="#">Cookie Policy</a> </li>
-                            <li><a href="#">Offer Terms</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                        <h5>Locations We Deliver To</h5>
-                        <ul>
-                            <li><a href="#">Chennai</a> </li>
-                            <li><a href="#">Kanchipuram</a> </li>
-                            <li><a href="#">Tiruchy</a> </li>
-                            <li><a href="#">Salem</a> </li>
-                            <li><a href="#">Madurai</a> </li>
-                            <li><a href="#">Theni</a> </li>
-                            <li><a href="#">Thiruvallur</a> </li>
-                            <li><a href="#">Pondicherry</a> </li>
-                            <li><a href="#">Thoothukudi</a> </li>
-                            <li><a href="#">Kanyakumari</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- top footer ends -->
-                <!-- bottom footer statrs -->
-                <div class="bottom-footer" hidden>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                            <h5>All Major Credit Cards Accepted</h5>
-                            <ul>
-                                <li>
-                                    <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Address:</h5>
-                            <p>Mahatma Gandhi Salai, Chennai - 600034.</p>
-                            <h5>Call us at: <a href="tel:+914450005500">+91 44 50005500</a></h5>
-                        </div>
-                        <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                            <h5>Who are we?</h5>
-                            <p>Launched in 2021, Our technology platform connects customers, restaurant partners and
-                                delivery partners, serving their multiple needs. Customers use our platform to search
-                                and discover restaurants, read and write customer generated reviews and view and upload
-                                photos, order food delivery, book a table and make payments while dining-out at
-                                restaurants.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- bottom footer ends -->
-            </div>
-        </footer>
+            <?php include('footer.php'); ?>
         <!-- end:Footer -->
     </div>
     <!-- end:page wrapper -->
@@ -498,6 +351,9 @@ include_once 'product-action.php'; //including controller
             </div>
         </div>
     </div>
+
+    
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="js/jquery.min.js"></script>
