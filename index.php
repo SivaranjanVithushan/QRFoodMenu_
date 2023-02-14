@@ -204,9 +204,9 @@ session_start(); //start temp session until logout/browser closed
                                 <div class="product-name">' . $rows['slogan'] . '</div>
                                 <div class="price-btn-block "> 
                                     <span class="price">Rs.' . $rows['price'] . '</span> 
-                                    <div class="text-center">  
-                                        <a href="dishes.php?res_id=' . $rows['d_id'] . '" class="btn btn-primary btn-lg btn-outline-primary view_prod" data-toggle="modal" data-id="#exampleModalCenter"><i class="fa fa-eye"></i> View</a>
-                                        <!--<button class="btn btn-primary btn-sm btn-outline-primary view_prod btn-block" data-id=""><i class="fa fa-eye"></i> View</button> -->
+                                    <div class="text-center" id="btnview">  
+                                        
+                                        <button class="btn btn-primary btn-sm btn-outline-primary view_prod btn-block" data-id=""><i class="fa fa-eye"></i> View</button> 
                                     </div>
                                 </div>
                             </div>
