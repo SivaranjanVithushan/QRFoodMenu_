@@ -656,11 +656,9 @@ label {
     display: inline-block;
 }
 
-.food-item-wrap .product-name {
+.food-item-wrap .content .product-name {
+    cursor: pointer;
     margin-bottom: 20px;
-}
-
-.truncate{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -933,7 +931,7 @@ label {
 }
 
 .cart-addon .food-item h6 {
-    /* margin: 0 0 2px 0; */
+    margin: 0 0 2px 0;
 }
 
 .cart-addon .food-item h6 a {
@@ -960,7 +958,7 @@ button.close {
     cursor: pointer;
     background: 0 0;
     border: 0;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     right: -15px;
     position: absolute;
     top: -15px;
@@ -1162,7 +1160,7 @@ Steps
     color: #f30;
 }
 
-.featured-restaurants .ratings .fa-star-o {}
+/* .featured-restaurants .ratings .fa-star-o {} */
 
 .restaurants-filter ul li {
     display: inline-block;
@@ -1382,7 +1380,7 @@ footer li a {
     color: #fff;
 }
 
-.profile .right-text {}
+/* .profile .right-text {} */
 
 .profile-img {
     width: 24.7%;

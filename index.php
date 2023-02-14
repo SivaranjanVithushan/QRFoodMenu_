@@ -16,6 +16,7 @@ session_start(); //start temp session until logout/browser closed
     <!-- <link rel="icon" href="homepage.png"> -->
     <title>Home</title>
     <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
