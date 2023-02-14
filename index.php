@@ -33,11 +33,9 @@ session_start(); //start temp session until logout/browser closed
         <nav class="navbar navbar-dark">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                <a>hi<a>
 
-                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
-               
-                
+                        <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+
 
                         <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                             <ul class="nav navbar-nav">
@@ -205,7 +203,7 @@ session_start(); //start temp session until logout/browser closed
                                 <h5><a href="dishes.php?res_id=' . $rows['c_id'] . '">' . $rows['title'] . '</a></h5>
                                 <div class="product-name">' . $rows['slogan'] . '</div>
                                 <div class="price-btn-block "> 
-                                    <span class="price">Rs.' . $rows['price'] . '</span> <br/>
+                                    <span class="price">Rs.' . $rows['price'] . '</span> 
                                     <div class="text-center">  
                                         <a href="dishes.php?res_id=' . $rows['d_id'] . '" class="btn btn-primary btn-lg btn-outline-primary view_prod" data-toggle="modal" data-id="#exampleModalCenter"><i class="fa fa-eye"></i> View</a>
                                         <!--<button class="btn btn-primary btn-sm btn-outline-primary view_prod btn-block" data-id=""><i class="fa fa-eye"></i> View</button> -->
