@@ -80,8 +80,6 @@ include_once 'product-action.php'; //including controller
                                 <h6><a href="#"><?php echo $rows['c_name']; ?></a></h6>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -187,7 +185,6 @@ include_once 'product-action.php'; //including controller
                                                         </p>
                                                     </div>
                                                     <!-- end:Description -->
-
                                             </div>
                                             <!-- end:col -->
                                             <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
