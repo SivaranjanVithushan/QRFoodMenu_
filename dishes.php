@@ -76,7 +76,7 @@ include_once 'product-action.php'; //including controller
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
-                            <div class="pull-left right-text white-txt">
+                            <div class="right-text white-txt">
                                 <h6><a href="#"><?php echo $rows['c_name']; ?></a></h6>
                             </div>
                         </div>

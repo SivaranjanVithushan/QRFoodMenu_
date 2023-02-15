@@ -75,7 +75,7 @@ if(isset($_POST['submit'] ))
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
-    <title>FoodPicky - Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -103,12 +103,12 @@ if(isset($_POST['submit'] ))
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
                         <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width="25px" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><b>Food Picky</b></span>
+                        <span><b>Restaurant</b></span>
                     </a>
                 </div>
                 <!-- End Logo -->

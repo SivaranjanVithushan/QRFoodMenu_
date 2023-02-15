@@ -77,7 +77,7 @@ if(isset($_POST['submit']))
     <meta name="author" content="">
     <!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
-    <title>FoodPicky - Admin Dashboard</title>
+    <title>Admin Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -91,7 +91,7 @@ if(isset($_POST['submit']))
 <![endif]-->
 </head>
 
-<body class="fix-header">
+<body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -104,12 +104,12 @@ if(isset($_POST['submit']))
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
-                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width = "25px"/></b>
+                        <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width="25px" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><b>Food Picky</b></span>
+                        <span><b>Restaurant</b></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -149,7 +149,7 @@ if(isset($_POST['submit']))
 
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/User.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> LogOut</a></li>
@@ -209,7 +209,7 @@ if(isset($_POST['submit']))
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper" >
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">

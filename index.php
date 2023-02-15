@@ -200,7 +200,7 @@ session_start(); //start temp session until logout/browser closed
                         <div class="food-item-wrap">
                             <div class="figure-wrap bg-image" data-image-src="admin/Res_img/category/' . $rows['image'] . '" alt="Category logo">
                             </div>
-                            <div class="content center-text">
+                            <div class="content center-text ">
                                 <h5><a href="dishes.php?c_id=' . $rows['c_id'] . '">' . $rows['c_name'] . '</a></h5>                   
                             </div>
                         </div>

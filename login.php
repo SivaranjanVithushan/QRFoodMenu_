@@ -16,6 +16,7 @@
 		}
 	</style>
 	<link rel="stylesheet" href="css/login.css">
+	
 
 </head>
 
@@ -71,6 +72,7 @@
 
 		<div class="cta">Not registered?<a href="registration.php" style="color:#008080;"> Create an account</a></div>
 	</div>
+
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 
