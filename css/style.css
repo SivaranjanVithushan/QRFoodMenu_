@@ -673,6 +673,11 @@ label {
     padding: 25px 15px 35px;
 }
 
+.food-item-wrap.center-text {
+    padding: 25px 15px 35px;
+    text-align: center;
+}
+
 .food-item-wrap .restaurant-block {
     border-top: 1px solid #eaebeb;
     float: left;

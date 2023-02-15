@@ -271,7 +271,7 @@ session_start();
                                         <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
                                             <button type="button" class="btn Btn">View User Details</button></a>
 
-                                        <a href="javascript:void(0);" target="_new" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
+                                        <a href="javascript:void(0);"  onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
                                             <button type="button" class="btn Btn">Take Action</button></a>
                                     </div>
 

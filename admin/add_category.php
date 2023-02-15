@@ -121,13 +121,13 @@ if (isset($_POST['submit']))
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
                         </li>
-                       
+
                     </ul>
                 </div>
             </nav>
         </div>
         <!-- End header header -->
-        
+
         <!-- Left Sidebar  -->
         <?php include('side_bar.php'); ?>
         <!--End Left Sidebar -->
@@ -276,6 +276,12 @@ if (isset($_POST['submit']))
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+
+    <script type="text/javascript">
+        function autoRefreshPage() {
+            window.location = window.location.href;
+        }
+    </script>
 
 </body>
 

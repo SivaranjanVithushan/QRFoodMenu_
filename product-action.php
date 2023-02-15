@@ -8,7 +8,7 @@ switch($_GET["action"])
  {
 	case "add":
 		if(!empty($quantity)) {
-								$stmt = $db->prepare("SELECT * FROM dishes where d_id= ?");
+								$stmt = $db->prepare("SELECT * FROM food where d_id= ?");
 								$stmt->bind_param('i',$productId);
 								$stmt->execute();
 								$productDetails = $stmt->get_result()->fetch_object();
