@@ -138,17 +138,16 @@ include_once 'product-action.php'; //including controller
                         <div class="widget-body">
                             <div class="price-wrap text-xs-center">
                                 <p>Total Amount</p>
-                                <h3 class="value"><strong>&#8377;
+                                <h3 class="value"><strong>Rs. 
                                         <?php echo $item_total; ?>
                                     </strong></h3>
-                                <p>Free Shipping</p>
                                 <a href="checkout.php?c_id=<?php echo $_GET['c_id']; ?>&action=check" class="btn theme-btn btn-lg">Checkout</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+                <div class="col-xs-12 col-sm-8 ">
 
                     <!-- end:Widget menu -->
                     <div class="menu-widget" id="2">
@@ -194,7 +193,7 @@ include_once 'product-action.php'; //including controller
                                             </div>
                                             <!-- end:col -->
                                             <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
-                                                <span class="price pull-left">&#8377;
+                                                <span class="price pull-left">Rs.
                                                     <?php echo $product['price']; ?>
                                                 </span>
                                                 <input class="b-r-0" type="text" name="quantity" style="margin-left:30px;" value="1" size="2" />

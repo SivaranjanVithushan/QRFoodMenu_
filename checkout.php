@@ -116,19 +116,9 @@ else{
                                             <table class="table">
 											<tbody>
                                           
-												 
-											   
-                                                    <tr>
-                                                        <td>Cart Subtotal</td>
-                                                        <td> &#8377;<?php echo $item_total; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shipping &amp; Handling</td>
-                                                        <td>FREE*</td>
-                                                    </tr>
                                                     <tr>
                                                         <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> &#8377;<?php echo $item_total; ?></strong></td>
+                                                        <td class="text-color"><strong> RS. <?php echo $item_total; ?></strong></td>
                                                     </tr>
                                                 </tbody>
 												

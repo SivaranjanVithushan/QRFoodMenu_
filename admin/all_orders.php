@@ -112,6 +112,7 @@ session_start();
 												<th>Status</th>
 												 <th>Ordered Date</th>
 												  <th>Action</th>
+                                                  <th>Table Number</th>
 
                                             </tr>
                                         </thead>
@@ -137,7 +138,7 @@ session_start();
 																					           <td>'.$rows['username'].'</td>
 																								<td>'.$rows['title'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>&#8377; '.$rows['price'].'</td>';
+																								<td>Rs. '.$rows['price'].'</td>';
 																								?>
 																								<?php
 																			$status=$rows['status'];
@@ -175,6 +176,7 @@ session_start();
 																								<?php
 																								echo '<a href="view_order.php?user_upd='.$rows['o_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																									</td>
+                                                                                                    <td>'.$rows['quantity'].'</td>
 																									</tr>';
 																		}
 														}
