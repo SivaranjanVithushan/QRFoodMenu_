@@ -675,7 +675,6 @@ label {
 
 .food-item-wrap.center-text {
     padding: 25px 15px 35px;
-    text-align: center;
 }
 
 .food-item-wrap .restaurant-block {
@@ -1083,7 +1082,6 @@ Steps
 /****** featured restaurants block *******/
 
 .featured-restaurants {
-    padding: 100px 0 20px;
     position: relative;
 }
 
