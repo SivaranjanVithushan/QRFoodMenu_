@@ -210,7 +210,7 @@ session_start();
 
 
             <!-- footer -->
-            <footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-06</b> Team. </footer>
+            <footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-08</b> Team. </footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->

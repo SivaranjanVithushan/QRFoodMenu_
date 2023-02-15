@@ -180,7 +180,6 @@ if(isset($_POST['submit']))
                         <li> <a class="has-arrow  " href="#" aria-expanded="false">  <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="allusers.php">All Users</a></li>
-								<li><a href="add_users.php">Add Users</a></li>
 
 
                             </ul>
@@ -305,7 +304,7 @@ if(isset($_POST['submit']))
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-						<footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-06</b> Team. </footer>
+						<footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-08</b> Team. </footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
