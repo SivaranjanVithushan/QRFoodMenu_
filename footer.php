@@ -4,7 +4,7 @@
         <!-- top footer statrs -->
         <div class="row top-footer">
             <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Choose it &amp; Enjoy your meals! </span> </div>
+                <a href="#"> <img src="images/Untitled-2.png" alt="Footer logo"> </a> <span>Choose it &amp; Enjoy your meals! </span> </div>
             <div class="col-xs-12 col-sm-2 about color-gray">
                 <h5>About Us</h5>
                 <ul>
