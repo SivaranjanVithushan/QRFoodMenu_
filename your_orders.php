@@ -81,7 +81,7 @@ tr:nth-of-type(odd) {
 	}
 
 th { 
-	background: #ff3300; 
+	background: teal; 
 	color: white; 
 	font-weight: bold; 
 	
@@ -166,11 +166,11 @@ only screen and (max-width: 760px),
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.jpg" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="dishes.php">Dishes <span class="sr-only"></span></a> </li>
                             
 							<?php
 						if(empty($_SESSION["user_id"]))
@@ -199,7 +199,7 @@ only screen and (max-width: 760px),
            
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/bg.jpg">
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
@@ -213,14 +213,15 @@ only screen and (max-width: 760px),
             </div>
             <!-- //results show -->
             <section class="restaurants-page">
+				
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-xs-12 col-sm-7 col-md-7 ">
+                        <div class="col-xs-12 ">
                             <div class="bg-gray restaurant-entry">
                                 <div class="row">
-								
-							<table >
+					
+						<table >
 						  <thead>
 							<tr>
 							
@@ -228,8 +229,9 @@ only screen and (max-width: 760px),
 							  <th>Quantity</th>
 							  <th>Price</th>
 							   <th>Status</th>
-							     <th>Date</th>
-								   <th>Action</th>
+								<th>Date</th>
+								<th>Action</th>
+								<th>Table Number</th>
 							  
 							</tr>
 						  </thead>
@@ -304,7 +306,7 @@ only screen and (max-width: 760px),
 						
 						  </tbody>
 					</table>
-						
+				
 					
                                     
                                 </div>

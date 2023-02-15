@@ -40,7 +40,7 @@ session_start(); //start temp session until logout/browser closed
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="dishes.php"><i class="fa fa-shopping-cart"></i> Cart<span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="dishes.php">Dishes<span class="sr-only"></span></a> </li>
 
                         <?php
                         if (empty($_SESSION["user_id"])) // if user is not login
@@ -67,7 +67,7 @@ session_start(); //start temp session until logout/browser closed
         <div class="hero-inner">
             <div class="container text-center hero-text font-white">
                 <h1>Choose it & Enjoy your meals! </h1>
-                <h5 class="font-white space-xs">Find popular restaurants, dishes, and coupons</h5>
+                <h5 class="font-white space-xs">Find tasty dishes, drinks and offers</h5>
                 <div class="banner-form">
                     <form class="form-inline">
                         <div class="form-group">
@@ -124,8 +124,7 @@ session_start(); //start temp session until logout/browser closed
     <section class="popular">
         <div class="container">
             <div class="title text-xs-center m-b-30">
-                <h2>Popular Dishes of this Week</h2>
-                <p class="lead">We’ve got something for everyone :)</p>
+                <h2>Offers of this Week</h2>
             </div>
             <div class="row">
                 <?php
@@ -142,7 +141,8 @@ session_start(); //start temp session until logout/browser closed
 															<div class="content">
 																<h5><a href="dishes.php?res_id=' . $r['c_id'] . '">' . $r['title'] . '</a></h5>
 																<div class="product-name">' . $r['slogan'] . '</div>
-																<div class="price-btn-block"> <span class="price">Rs. ' . $r['price'] . '</span> <a href="dishes.php?res_id=' . $r['c_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+																<div class="price-btn-block"> <span style="text-decoration:line-through;" class="price">Rs. ' . $r['price'] . '</span>  </div>
+                                                                <div class="price-btn-block"> <span class="price">Rs. ' . sprintf("%.2f",$r['price']-($r['price']*0.1)) . '</span><a href="dishes.php?res_id=' . $r['c_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a></div>
 															</div>
 
 														</div>
@@ -160,29 +160,9 @@ session_start(); //start temp session until logout/browser closed
     <section class="featured-restaurants">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="title-block pull-left">
-                        <h4>Categories</h4>
+                    <div class="title text-xs-center m-b-30">
+                        <h2>Categories</h2>
                     </div>
-                </div>
-                <div class="col-sm-8">
-                    <!-- restaurants filter nav starts -->
-                    <div class="restaurants-filter pull-right">
-                        <nav class="primary pull-left">
-                            <ul>
-                                <li><a href="#" class="selected" data-filter="*">all</a> </li>
-                                <?php
-                                // display categories here
-                                // $res = mysqli_query($db, "select * from food_category");
-                                // while ($row = mysqli_fetch_array($res)) {
-                                //     echo '<li><a href="#" data-filter=".' . $row['c_name'] . '"> ' . $row['c_name'] . '</a> </li>';
-                                // }
-                                ?>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- restaurants filter nav ends -->
-                </div>
             </div>
             <!-- restaurants listing starts -->
             <div class="row">
