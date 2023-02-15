@@ -167,9 +167,6 @@ include_once 'product-action.php'; //including controller
                             $products = $stmt->get_result();
                             if (!empty($products)) {
                                 foreach ($products as $product) {
-
-
-
                             ?>
                                     <div class="food-item">
                                         <div class="row">
@@ -190,6 +187,7 @@ include_once 'product-action.php'; //including controller
                                                         </p>
                                                     </div>
                                                     <!-- end:Description -->
+
                                             </div>
                                             <!-- end:col -->
                                             <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
@@ -200,6 +198,7 @@ include_once 'product-action.php'; //including controller
                                                 <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
                                             </div>
                                             </form>
+
                                         </div>
                                         <!-- end:row -->
                                     </div>
