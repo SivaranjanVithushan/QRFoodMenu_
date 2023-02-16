@@ -175,13 +175,13 @@ session_start(); //start temp session until logout/browser closed
                         $rowss = mysqli_fetch_array($query);
     
 
-                        echo '<div  class="col-xs-12 col-sm-6 col-md-4 food-item all ' . $rowss['c_name'] . '">
-                        <a href="dishes.php?c_id=' . $rows['c_id'] . '">
+                        echo '<div  class="col-xs-12 col-sm-6 col-md-4 food-item all '. $rowss['c_name'] . '">
+                        <a href="dishes.php?c_id=' .$rows['c_id']. '">
                         <div class="food-item-wrap">
                             <div class="figure-wrap bg-image" data-image-src="admin/Res_img/category/' . $rows['image'] . '" alt="Category logo">
                             </div>
                             <div class="content center-text ">
-                                <h5><a href="dishes.php?c_id=' . $rows['c_id'] . '">' . $rows['c_name'] . '</a></h5>                   
+                                <h5><a href="dishes.php?c_id='. $rows['c_id'] .'">' . $rows['c_name'] . '</a></h5>                   
                             </div>
                         </div>
                         </a>
@@ -195,45 +195,6 @@ session_start(); //start temp session until logout/browser closed
         </div>
     </section>
     <!-- end:Restaurant listing -->
-
-    <div class="MODEL">
-        <div class="modal-header">
-            <h5 class="modal-title">Product</h5>
-        </div>
-        
-            <div class="card">
-            
-            <?php 
-            $query = mysqli_query($db, "select * from food where d_id='" . $rows['c_id'] . "' ");
-            $rowss = mysqli_fetch_array($query);
-            echo '<img src="admin\Res_img\dishes\5ad759e1546fc.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Diet Coke</h5>
-                <p class="card-text truncate">In Can</p>
-                <p class="card-text">Price: $20</p>
-                <div class="form-group">
-                </div>
-                <div class="row">
-                    <div class="col-md-2"><label class="control-label">Qty</label></div>
-                    <div class="input-group col-md-7 mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn1 btn-outline-secondary" type="button" id="qty-minus">-</button>
-                        </div>
-
-                        <input type="number" readonly="" value="1" min="1" class="form-control" name="qty">
-                        <div class="input-group-prepend">
-                            <button class="btn1 btn-outline-secondary" type="button" id="qty-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-outline-primary btn-sm btn-block" id="add_to_cart_modal">Add to Cart</button>
-                </div>
-            </div>'; ?>
-        </div>
-    </div>
-
-
 
     <!-- start: FOOTER -->
     <?php include('footer.php'); ?>

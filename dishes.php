@@ -28,7 +28,7 @@ include_once 'product-action.php'; //including controller
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body onload="myFunction()">
+<body>
 
     <!--header starts-->
     <header id="header" class="header-scroll top-header headrom">
