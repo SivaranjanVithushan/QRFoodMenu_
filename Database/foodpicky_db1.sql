@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2023 at 07:49 AM
+-- Generation Time: Feb 16, 2023 at 08:35 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foodpicky_db`
+-- Database: `foodpicky_db1`
 --
 
 -- --------------------------------------------------------
@@ -150,16 +150,16 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`d_id`, `c_id`, `title`, `slogan`, `price`, `img`) VALUES
-(2, 10, 'Parota', 'Porottas/Parathas are commonly eaten with vegetable kurma/korma, chicken, fish, mutton, or beef curry. They are also served stuffed with vegetables such as potatoes or radish', '50.00', '63dd2b150fae7.jpg'),
-(3, 7, 'Pasta Carbonara', 'The silky carbonara sauce is created when the beaten eggs are tossed with the hot pasta and a little fat from the pancetta or bacon.', '200.00', '63dd2cef25c88.jpg'),
-(4, 10, 'Puttu', 'It is a dish made of steamed cylinders of ground rice layered with coconut shavings, sometimes with a sweet or savory filling. Puttu is served hot with sweet side dishes such as palm sugar or banana', '60.00', '63dd2d2085f77.jpg'),
-(5, 8, 'Margherita Pizza', 'Pizza Margherita (more commonly known in English as Margherita pizza) is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.', '2500.00', '63dd2d5a1e8c1.jpg'),
-(6, 10, 'Dosai', 'Rice and wheat are the top two grains consumed by Indians, with rice topping the list. Indians have taken this humble grain and transformed it into a plethora of sweet and savory dishes unlike any other culture in the worl', '50.00', '63dd2d939e98c.jpg'),
-(7, 10, 'Coconut Rice', 'Coconut rice is a dish prepared by soaking white rice in coconut milk or cooking rice with coconut flakes. As both coconut and the rice-plant are commonly found in the tropics all around the world', '250.00', '63dd2dfe7571b.jpg'),
-(8, 9, 'Chicken Kothu', 'Tender chicken breasts simmered in a flavourful and creamy herb sauce with a hint of garlic', '800.00', '63dd2fdc60d10.jpg'),
-(9, 9, 'Egg Koththu', 'Lasagna is the name of one of the oldest and best-known pasta shapes. It is usually rectangular or ribbon shaped, thicker than tagliatelle, made from a dough based on flour and eggs', '600.00', '63dd30112ccb3.jpg'),
-(10, 9, 'Chees Koththu', 'It is made from colocasia leaves (chevu in Tulu, taro, kesuve or arbi) stuffed with gram or rice flour and flavorings such as spices, tamarind, and jaggery (raw sugar).', '1000.00', '63dd3034228a8.jpg'),
-(11, 9, 'Beef Koththu', 'The dish is made from a spicy flavored flaky pie pastry that is stuffed in with chopped prawns that is cooked in Recheado masala. This is one of the common masala used in most of the Goan cooking', '850.00', '63dd3053bfb02.jpg');
+(2, 13, 'Parota', 'Porottas/Parathas are commonly eaten with vegetable kurma/korma, chicken, fish, mutton, or beef curry. They are also served stuffed with vegetables such as potatoes or radish', '50.00', '63dd2b150fae7.jpg'),
+(3, 14, 'Pasta Carbonara', 'The silky carbonara sauce is created when the beaten eggs are tossed with the hot pasta and a little fat from the pancetta or bacon.', '200.00', '63dd2cef25c88.jpg'),
+(4, 15, 'Puttu', 'It is a dish made of steamed cylinders of ground rice layered with coconut shavings, sometimes with a sweet or savory filling. Puttu is served hot with sweet side dishes such as palm sugar or banana', '60.00', '63dd2d2085f77.jpg'),
+(5, 13, 'Margherita Pizza', 'Pizza Margherita (more commonly known in English as Margherita pizza) is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.', '2500.00', '63dd2d5a1e8c1.jpg'),
+(6, 14, 'Dosai', 'Rice and wheat are the top two grains consumed by Indians, with rice topping the list. Indians have taken this humble grain and transformed it into a plethora of sweet and savory dishes unlike any other culture in the worl', '50.00', '63ea5ad427bf2.jpg'),
+(7, 13, 'Coconut Rice', 'Coconut rice is a dish prepared by soaking white rice in coconut milk or cooking rice with coconut flakes. As both coconut and the rice-plant are commonly found in the tropics all around the world', '250.00', '63dd2dfe7571b.jpg'),
+(8, 15, 'Chicken Kothu', 'Tender chicken breasts simmered in a flavourful and creamy herb sauce with a hint of garlic', '800.00', '63dd2fdc60d10.jpg'),
+(9, 13, 'Egg Koththu', 'Lasagna is the name of one of the oldest and best-known pasta shapes. It is usually rectangular or ribbon shaped, thicker than tagliatelle, made from a dough based on flour and eggs', '600.00', '63dd30112ccb3.jpg'),
+(10, 15, 'Chees Koththu', 'It is made from colocasia leaves (chevu in Tulu, taro, kesuve or arbi) stuffed with gram or rice flour and flavorings such as spices, tamarind, and jaggery (raw sugar).', '1000.00', '63dd3034228a8.jpg'),
+(11, 15, 'Beef Koththu', 'The dish is made from a spicy flavored flaky pie pastry that is stuffed in with chopped prawns that is cooked in Recheado masala. This is one of the common masala used in most of the Goan cooking', '850.00', '63dd3053bfb02.jpg');
 
 -- --------------------------------------------------------
 
@@ -182,8 +182,9 @@ INSERT INTO `food_category` (`c_id`, `c_name`, `image`, `active`) VALUES
 (13, 'Lunch', '63e286223f5df.jpg', 'Yes'),
 (14, 'Breakfast', '63e286ac75953.jpg', 'Yes'),
 (15, 'Dinner', '63e286ec1fed1.jpg', 'Yes'),
-(16, 'Dessert', '63e35141cd428.jpg', 'Yes'),
-(17, 'Drinks', '63e287a65c98d.jpg', 'Yes');
+(16, 'Dessert', '63e73ec16958f.jpg', 'Yes'),
+(17, 'Drinks', '63e287a65c98d.jpg', 'Yes'),
+(18, 'cake', '63ebe11a6c274.jpg', 'yes');
 
 -- --------------------------------------------------------
 
@@ -208,78 +209,11 @@ INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
 (72, 39, 'closed', 'Order delivered.', '2022-03-17 12:35:00'),
 (73, 42, 'closed', 'Order delivered & payment received successfully.', '2022-03-23 13:53:20'),
 (74, 47, 'rejected', 'Order Cancelled by User.', '2022-03-23 13:54:08'),
-(75, 43, 'in process', 'Expected Delivery: 25th March, Friday ', '2022-03-23 14:07:03'),
 (76, 43, 'closed', 'aaaaa', '2023-02-05 06:05:02'),
 (77, 46, 'closed', 'Table no 5', '2023-02-05 06:08:50'),
-(78, 50, 'closed', 'jjjj', '2023-02-06 06:17:13');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `restaurant`
---
-
-CREATE TABLE `restaurant` (
-  `rs_id` int(222) NOT NULL,
-  `c_id` int(222) NOT NULL,
-  `title` varchar(222) NOT NULL,
-  `email` varchar(222) NOT NULL,
-  `phone` varchar(222) NOT NULL,
-  `url` varchar(222) NOT NULL,
-  `o_hr` varchar(222) NOT NULL,
-  `c_hr` varchar(222) NOT NULL,
-  `o_days` varchar(222) NOT NULL,
-  `address` text NOT NULL,
-  `image` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `restaurant`
---
-
-INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
-(48, 17, 'Scallion', 'scallion@gmail.com', '91-44-4565 3333', 'scallion.com', '11am', '11pm', 'mon-sat', '36, Sardar Patel Road Guindy, Chennai-32.', '6228c94e35623.jpg', '2022-03-09 15:35:42'),
-(49, 19, 'Place to Bee', 'placetobee@gmail.com', '0423-2449464', 'placetobee.com', '7am', '8pm', 'mon-fri', '176A Club Rd, Ooty.', '622378e27104d.jpg', '2022-03-05 14:51:14'),
-(50, 16, 'Mamalla Bhavan', 'mamallabhavan@gmail.com', ' 0413-4308084', 'mamallabhavan.com', '9am', '9pm', 'mon-fri', 'South Mada St, Mahaballipuram.', '6228c368568a2.jpg', '2022-03-09 15:10:32'),
-(51, 20, 'Martini', 'martini@gmail.com', '3454345654', 'martinifoods.com', '9am', '9pm', 'mon-wed', 'Guindy, Chennai. ', '62237aa6bb3fd.jpg', '2022-03-05 14:58:46'),
-(52, 12, 'Hudson', 'hudson@gmail.com', '2345434567', 'hudson.com', '10am', '9pm', 'mon-fri', ' Parrys corner, Chennai ', '62237531bdcef.jpg', '2022-03-05 14:35:29'),
-(53, 12, 'Dreaming Tree', 'dreamingtree@gmail.com', ' 8870057753', 'www.dreamingtree.in', '8am', '8pm', 'mon-sat', 'Ramana Nagar, Tiruvannamalai.', '622370e46b301.jpg', '2022-03-05 14:17:08'),
-(54, 12, 'Café des Arts', 'cafedesarts@gmail.com', '5627606077', 'www.cafedesarts.com', '7am', '8pm', 'mon-fri', '10 Suffren St, Puducherry', '622380818b68c.jpg', '2022-03-05 15:23:45'),
-(55, 16, 'Junior Kuppanna', 'juniorkuppanna@gmail.com', ' 044-28340071', 'www.junior kuppanna.com', '8am', '10pm', '24hr-x7', '4 Kannaiya St, North Usman Rd\r\nT Nagar', '622383ab2c8bb.jpg', '2022-03-05 15:37:15'),
-(56, 16, 'Hotel Saravana Bhavan', 'www.saravanabhavan@gmail.com', ' 0416-2217755', 'www.saravanabhavan.com', '6am', '10pm', 'mon-sat', 'Sri Siva AVM Grande Hotel, 58/2 Katpadi Rd,vellore', '622384fa7c59c.jpg', '2022-03-05 15:42:50'),
-(57, 14, 'La Belle Vie', 'www.labellevie@gmail.com', ' 0423-2233323', 'http://serendipityo.com', '11am', '7pm', 'mon-sat', '180° McIver, Orange Grove Rd,Upper Coonoor', '622386518dd37.jpg', '2022-03-05 15:48:33'),
-(59, 19, 'La Pasta World', 'lapastaworld@gmail.com', ' 9994670282', 'www.lapastaworld.com', '6am', '11pm', 'mon-wed', '55 Vysial St,Pondicherry', '6228c0d753844.jpg', '2022-03-09 14:59:35'),
-(60, 15, 'Peshawri', 'peshawri@gmail.com', '91-44-56609670', 'www.peshawri.com', '9am', '10pm', 'mon-fri', 'ITC Grand Chola, Chennai.', '6228cecc2c420.jpg', '2022-03-09 15:59:08'),
-(61, 18, 'New Banana Cafe & Restaurant', 'bananacafe@gmail.com', '+91 96265 61259', 'https://www.facebook.com/NewBananaCafe', '8am', '8pm', 'mon-fri', '42, Rue Cazy Street Close to old Law collage, Pondicherry-605001.', '6228d04b1c462.jpg', '2022-03-09 16:05:31'),
-(65, 13, 'Hotel Kannappa', 'hotelkannappa@gmail.com', '0431-404-5005', 'http://www.hotelkannappa.com/', '10am', '9pm', 'mon-fri', 'Grand Gardenia, 22-25 Mannarpuram Junction, Trichy.', '622adc5e654b2.jpg', '2022-03-11 05:21:34');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `res_category`
---
-
-CREATE TABLE `res_category` (
-  `c_id` int(222) NOT NULL,
-  `c_name` varchar(222) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `res_category`
---
-
-INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
-(12, 'Cafe', '2022-03-05 14:07:48'),
-(13, 'Chettinadu', '2022-03-05 14:10:18'),
-(14, 'Multicuisine', '2022-03-05 14:10:36'),
-(15, 'North-Indian', '2022-03-09 15:39:06'),
-(16, 'South-Indian', '2022-03-09 15:38:14'),
-(17, 'Chinese', '2022-03-05 14:11:08'),
-(18, 'French', '2022-03-05 14:11:22'),
-(19, 'Italian', '2022-03-05 14:11:30'),
-(20, 'Continental', '2022-03-17 12:10:28');
+(79, 52, 'rejected', 'user reject', '2023-02-11 09:09:00'),
+(81, 60, 'closed', 'jj', '2023-02-14 19:37:09'),
+(82, 61, 'closed', 'fdf', '2023-02-15 07:09:12');
 
 -- --------------------------------------------------------
 
@@ -304,13 +238,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `status`, `date`) VALUES
-(39, 'santhosh', 'Santhosh', 'Kumar', 'santhosh@gmail.com', '9347217890', '3a2b7ec8152a0b869cbc6ef54cedae98', 1, '2022-03-23 13:25:08'),
 (40, 'joe27', 'Joshua', 'D', 'joshua@gmail.com', '7629313490', '18275a3df7a93d896d3179c612d92fe1', 1, '2022-03-23 13:30:04'),
-(41, 'prakash', 'Prakash', 'M', 'prakash@gmail.com', '7456003256', '707641143ca679250a50483673fa9393', 1, '2022-03-23 13:34:54'),
-(42, 'fathima', 'Fathima', 'S', 'fathima@gmail.com', '9821430976', 'f618e982479c744645088c75babb70b3', 1, '2022-03-23 13:37:50'),
 (43, 'nancy', 'Nancy', 'Rani', 'nancy@gmail.com', '7900238167', 'a16627318ba6668dd95068109caa2490', 1, '2022-03-23 13:42:52'),
 (44, 'vinoth36', 'Vinoth', 'Kumar', 'vinoth@gmail.com', '7357700216', 'fa57148e32465b50adc70642be7ac76e', 1, '2022-03-23 13:50:29'),
-(45, 'vithushan', 'aaaaaa', 'aaaaaaaaaaaaa', 'vithukuddy23@gmail.com', '0772644218', '4402dbe68f8dc7e06cf8f209b082bf66', 1, '2023-02-04 13:25:01');
+(47, 'Vithushan', 'Sivaranjan', 'Vithushan', 'premsinhalam@gmail.com', '0772644218', '156cbb1a119c55a14fe35d655d6a586a', 1, '2023-02-14 06:08:34'),
+(48, 'arafath', 'arafath', 'arafath', 'a@gmail.com', '0754123799', '25d55ad283aa400af464c76d713c07ad', 1, '2023-02-14 19:20:30');
 
 -- --------------------------------------------------------
 
@@ -324,6 +256,7 @@ CREATE TABLE `users_orders` (
   `title` varchar(222) NOT NULL,
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `tableNo` int(222) NOT NULL,
   `status` varchar(222) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -332,13 +265,15 @@ CREATE TABLE `users_orders` (
 -- Dumping data for table `users_orders`
 --
 
-INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
-(43, 40, 'Parota', 1, '100.00', 'closed', '2023-02-05 06:05:02'),
-(46, 44, 'Schezwan Fried Rice', 1, '200.00', 'closed', '2023-02-05 06:08:50'),
-(50, 45, 'Spinach Artichoke Stuffed Chicken', 1, '150.00', 'closed', '2023-02-06 06:17:13'),
-(52, 45, 'Spinach Artichoke Stuffed Chicken', 1, '150.00', NULL, '2023-02-04 15:37:26'),
-(55, 45, 'Caprese Stuffed Garlic Butter Portobellos', 1, '120.00', NULL, '2023-02-06 06:14:24'),
-(56, 45, 'Caprese stuffed chicken', 1, '100.00', NULL, '2023-02-06 06:14:24');
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `tableNo`, `status`, `date`) VALUES
+(43, 40, 'Parota', 1, '100.00', 0, 'closed', '2023-02-05 06:05:02'),
+(46, 44, 'Schezwan Fried Rice', 1, '200.00', 0, 'closed', '2023-02-05 06:08:50'),
+(50, 45, 'Spinach Artichoke Stuffed Chicken', 1, '150.00', 0, 'closed', '2023-02-06 06:17:13'),
+(52, 45, 'Spinach Artichoke Stuffed Chicken', 1, '150.00', 0, 'rejected', '2023-02-11 09:09:00'),
+(55, 45, 'Caprese Stuffed Garlic Butter Portobellos', 1, '120.00', 0, NULL, '2023-02-06 06:14:24'),
+(56, 45, 'Caprese stuffed chicken', 1, '100.00', 0, NULL, '2023-02-06 06:14:24'),
+(62, 48, 'Pasta Carbonara', 2, '200.00', 5, NULL, '2023-02-16 07:15:08'),
+(63, 48, 'Parota', 1, '50.00', 5, NULL, '2023-02-16 07:15:09');
 
 --
 -- Indexes for dumped tables
@@ -379,18 +314,6 @@ ALTER TABLE `food_category`
 --
 ALTER TABLE `remark`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `restaurant`
---
-ALTER TABLE `restaurant`
-  ADD PRIMARY KEY (`rs_id`);
-
---
--- Indexes for table `res_category`
---
-ALTER TABLE `res_category`
-  ADD PRIMARY KEY (`c_id`);
 
 --
 -- Indexes for table `users`
@@ -436,37 +359,25 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `food_category`
 --
 ALTER TABLE `food_category`
-  MODIFY `c_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `c_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `remark`
 --
 ALTER TABLE `remark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
-
---
--- AUTO_INCREMENT for table `restaurant`
---
-ALTER TABLE `restaurant`
-  MODIFY `rs_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-
---
--- AUTO_INCREMENT for table `res_category`
---
-ALTER TABLE `res_category`
-  MODIFY `c_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `u_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
