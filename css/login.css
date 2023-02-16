@@ -34,7 +34,7 @@ body {
 .form-module {
   position: relative;
   background: #ffffff;
-  max-width: 60%;
+  max-width: 400px;
   width: 100%;
   border-top: 5px solid #008080;
   box-shadow: 0 0 3px rgba(114, 8, 8, 0.1);
