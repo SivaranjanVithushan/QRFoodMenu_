@@ -159,7 +159,7 @@ td, th {
 
       <tr >
       <td><b>Remarks</b></td>
-      <td><textarea name="remark" cols="50" rows="10" required="required"></textarea></td>
+      <td><textarea name="remark" cols="50" rows="10"></textarea></td>
     </tr>
     
 

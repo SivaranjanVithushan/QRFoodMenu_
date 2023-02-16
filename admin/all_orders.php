@@ -6,6 +6,7 @@ error_reporting(0);
 session_start();
 
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/foodpicky.png">
     <title>Admin Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -34,16 +35,17 @@ session_start();
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
         <!-- header header  -->
-         <div class="header">
+        <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header">
-                <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
                         <b><img src="images/foodpicky.png" alt="homepage" class="dark-logo" width="25px" /></b>
                         <!--End Logo icon -->
@@ -67,9 +69,10 @@ session_start();
                         <!-- Search -->
                         <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
                         </li>
-                    
+
                         <!-- Profile -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/User.png" alt="user" class="profile-pic" /></a>
@@ -86,7 +89,7 @@ session_start();
         <!-- End header header -->
 
         <!-- Left Sidebar  -->
-            <?php include('side_bar.php'); ?>
+        <?php include('side_bar.php'); ?>
         <!--End Left Sidebar -->
 
         <!-- Page wrapper  -->
@@ -94,7 +97,8 @@ session_start();
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Orders</h3> </div>
+                    <h3 class="text-primary">Orders</h3>
+                </div>
 
             </div>
             <!-- End Bread crumb -->
@@ -117,103 +121,94 @@ session_start();
                                                 <th>Dishes</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
-												
-												<th>Status</th>
-												 <th>Ordered Date</th>
-												  <th>Action</th>
-                                                  <th>Table Number</th>
-
+                                                <th>TableNO</th>
+                                                <th>Status</th>
+                                                <th>Ordered Date</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
 
 
-											<?php
-												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
-												$query=mysqli_query($db,$sql);
+                                            <?php
+                                            $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
+                                            $query = mysqli_query($db, $sql);
 
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="8"><center>No Orders-Data!</center></td>';
-														}
-													else
-														{
-																	while($rows=mysqli_fetch_array($query))
-																		{
+                                            if (!mysqli_num_rows($query) > 0) {
+                                                echo '<td colspan="8"><center>No Orders-Data!</center></td>';
+                                            } else {
+                                                while ($rows = mysqli_fetch_array($query)) {
 
-																				?>
-																				<?php
-																					echo ' <tr>
-																					           <td>'.$rows['username'].'</td>
-																								<td>'.$rows['title'].'</td>
-																								<td>'.$rows['quantity'].'</td>
-																								<td>Rs. '.$rows['price'].'</td>';
-																								?>
-																								<?php
-																			$status=$rows['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-																			<td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Dispatch</button></td>
-																		   <?php
-																			  }
-																			   if($status=="in process")
-																			 { ?>
-																			<td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On the Way!</button></td>
-																			<?php
-																				}
-																			if($status=="closed")
-																				{
-																			?>
-																			<td> <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td>
-																			<?php
-																			}
-																			?>
-																			<?php
-																			if($status=="rejected")
-																				{
-																			?>
-																			<td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>Cancelled</button></td>
-																			<?php
-																			}
-																			?>
-																						<?php
-																							echo '	<td>'.$rows['date'].'</td>';
-																							?>
-																									 <td>
-																									 <a href="delete_orders.php?order_del=<?php echo $rows['o_id'];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
-																								<?php
-																								echo '<a href="view_order.php?user_upd='.$rows['o_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                            ?>
+                                                    <?php
+                                                    echo ' <tr>
+															    <td>' . $rows['username'] . '</td>
+															    <td>' . $rows['title'] . '</td>
+																<td>' . $rows['quantity'] . '</td>
+																<td>Rs. ' . $rows['price'] . '</td>
+                                                                <td>' . $rows['tableNo'] . '</td>';
+                                                    ?>
+                                                    <?php
+                                                    $status = $rows['status'];
+                                                    if ($status == "" or $status == "NULL") {
+                                                    ?>
+                                                        <td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars" aria-hidden="true">Dispatch</button></td>
+                                                    <?php
+                                                    }
+                                                    if ($status == "in process") { ?>
+                                                        <td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span>On the Way!</button></td>
+                                                    <?php
+                                                    }
+                                                    if ($status == "closed") {
+                                                    ?>
+                                                        <td> <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true">Delivered</button></td>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                    <?php
+                                                    if ($status == "rejected") {
+                                                    ?>
+                                                        <td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>Cancelled</button></td>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                    <?php
+                                                    echo '	<td>' . $rows['date'] . '</td>';
+                                                    ?>
+                                                    <td>
+                                                        <a href="delete_orders.php?order_del=<?php echo $rows['o_id']; ?>" onclick="return confirm('Are you sure?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+                                                        <?php
+                                                        echo '<a href="view_order.php?user_upd=' . $rows['o_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																									</td>
-                                                                                                    <td>'.$rows['quantity'].'</td>
+                                                                                                   
 																									</tr>';
-																		}
-														}
-											?>
+                                                }
+                                            }
+                                                ?>
 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-						 </div>
-
-                            </div>
-                        </div>
                     </div>
+
                 </div>
-                <!-- End PAge Content -->
             </div>
-            <!-- End Container fluid  -->
-
-
-
-
-            <!-- footer -->
-            <footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-08</b> Team. </footer>
-            <!-- End footer -->
         </div>
-        <!-- End Page wrapper  -->
+    </div>
+    <!-- End PAge Content -->
+    </div>
+    <!-- End Container fluid  -->
+
+
+
+
+    <!-- footer -->
+    <footer class="footer"> © 2023 All rights reserved. Made with &#x1F49C; by <b>Group-08</b> Team. </footer>
+    <!-- End footer -->
+    </div>
+    <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
     <!-- All Jquery -->

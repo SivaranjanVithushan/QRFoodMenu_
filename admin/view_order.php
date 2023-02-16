@@ -213,13 +213,20 @@ session_start();
 
                                             </tr>
                                             <tr>
+                                                <td><strong>TableNo:</strong></td>
+                                                <td>
+                                                    <center><?php echo $rows['table_no']; ?></center>
+                                                </td>
+                                            </tr>
+
+                                            <!-- <tr>
                                                 <td><strong>Address:</strong></td>
                                                 <td>
                                                     <center><?php echo $rows['address']; ?></center>
                                                 </td>
 
 
-                                            </tr>
+                                            </tr> -->
                                             <tr>
                                                 <td><strong>Date:</strong></td>
                                                 <td>

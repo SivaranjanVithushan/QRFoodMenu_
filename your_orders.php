@@ -227,11 +227,10 @@ and also iPads specifically.
 												<th>Item</th>
 												<th>Quantity</th>
 												<th>Price</th>
+												<th>TableNo</th>
 												<th>Status</th>
 												<th>Date</th>
-												<th>Action</th>
-												<th>Table Number</th>
-
+												<th>Action</th>								
 											</tr>
 										</thead>
 										<tbody>
@@ -251,6 +250,7 @@ and also iPads specifically.
 														<td data-column="Item"> <?php echo $row['title']; ?></td>
 														<td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
 														<td data-column="Price">Rs. <?php echo $row['price']; ?></td>
+														<td data-column="TableNo"> <?php echo $row['tableNo']; ?></td>
 														<td data-column="Status">
 															<?php
 															$status = $row['status'];
@@ -278,9 +278,11 @@ and also iPads specifically.
 															?>
 														</td>
 														<td data-column="Date"> <?php echo $row['date']; ?></td>
-														<td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+														<td data-column="Action"> 
+															<a href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10">
+																<i class="fa fa-trash-o" style="font-size:16px"></i>
+															</a>
 														</td>
-														<td data-column="Table Number"> <?php echo $row['price']; ?></td>
 
 													</tr>
 
