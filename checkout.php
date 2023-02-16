@@ -16,7 +16,7 @@ if (empty($_SESSION["user_id"])) {
 
         if ($_POST['submit']) {
 
-            $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] . "')";
+            $SQL = "insert into users_orders(u_id,title,quantity,price,tableNo) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] . "','" . $_POST['tableNo'] . "')";
 
             mysqli_query($db, $SQL);
 
@@ -147,12 +147,16 @@ if (empty($_SESSION["user_id"])) {
                                                     <li>
                                                         <label class="custom-control custom-radio  m-b-20">
                                                             <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on delivery</span>
-                                                            <br> <span>you can Pay digitally with SMS Pay Link.</span> 
+                                                            <br> <span>you can Pay digitally with SMS Pay Link.</span>
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <label class="custom-control custom-radio  m-b-10">
                                                             <input name="mod" type="radio" value="paypal" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Credit Card<img src="images/paypal.jpg" alt="" width="90"></span> </label>
+                                                    </li>
+                                                    <li>
+                                                    <label for="custom-control">Table No:</label>
+                                                            <input class="form-control" type="text" name="tableNo"  placeholder="Enter Your Table No" required> <small class="form-text text-muted">before Order Enter the Table No</small>
                                                     </li>
                                                 </ul>
                                                 <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit" class="btn btn-outline-success btn-block" value="Order now"> </p>
