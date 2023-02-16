@@ -142,7 +142,7 @@ session_start(); //start temp session until logout/browser closed
 																<h5><a href="dishes.php?res_id=' . $r['c_id'] . '">' . $r['title'] . '</a></h5>
 																<div class="product-name">' . $r['slogan'] . '</div>
 																<div class="price-btn-block"> <span style="text-decoration:line-through;" class="price">Rs. ' . $r['price'] . '</span>  </div>
-                                                                <div class="price-btn-block"> <span class="price">Rs. ' . sprintf("%.2f",$r['price']-($r['price']*0.1)) . '</span><a href="dishes.php?res_id=' . $r['c_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a></div>
+                                                                <div class="price-btn-block"> <span class="price">Rs. ' . sprintf("%.2f",$r['price']-($r['price']*0.1)) . '</span><a href="dishes.php?c_id=' . $r['c_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a></div>
 															</div>
 
 														</div>
