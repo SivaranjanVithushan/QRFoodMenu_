@@ -1,10 +1,3 @@
-/*!
- * Foodpicky HTML template V 1.0
- * A simple and easy to use HTML template designed for online food ordering.
- * http://codenpixel.com
- * Author : codenpixel (http://codenpixel.com/)
- */
-
 /* 
 *  Table of content 
 *************************************
@@ -16,7 +9,7 @@
 *   
 **/
 
-$(document).ready(function() {
+$(document).ready(function () {
     "use strict";
 
     $(".animsition").animsition({
@@ -34,12 +27,12 @@ $(document).ready(function() {
         overlayClass: 'animsition-overlay-slide',
         overlayParentElement: 'body'
     });
-   
-     $(".bg-image").css("background",function(){var a="url("+$(this).data("image-src")+") no-repeat center center";return a}),$(".bg-image").css("background-size","cover"),
-        
-    /// Range slider   
-    $("#ex2").slider({});
-    $("#ex2").on("slide", function(slideEvt) {
+
+    $(".bg-image").css("background", function () { var a = "url(" + $(this).data("image-src") + ") no-repeat center center"; return a }), $(".bg-image").css("background-size", "cover"),
+
+        /// Range slider   
+        $("#ex2").slider({});
+    $("#ex2").on("slide", function (slideEvt) {
         $("#ex2SliderVal").text(slideEvt.value);
     });
 
@@ -58,8 +51,8 @@ $(document).ready(function() {
     });
     // initialise
     headroom.init();
-    
-    
+
+
     // initialise
     headroom.init();
     ////////Packages filter
@@ -74,7 +67,7 @@ $(document).ready(function() {
     });
 
     /////// Isotope 
-    $("nav.primary ul a").click(function() {
+    $("nav.primary ul a").click(function () {
         var selector = $(this).attr("data-filter");
         $container.isotope({
             filter: selector,
@@ -88,7 +81,7 @@ $(document).ready(function() {
     });
     var $optionSets = $("nav.primary ul"),
         $optionLinks = $optionSets.find("a");
-    $optionLinks.click(function() {
+    $optionLinks.click(function () {
         //alert( $optionLinks);
         var $this = $(this);
         // don"t proceed if already selected
@@ -98,20 +91,20 @@ $(document).ready(function() {
         var $optionSet = $this.parents("nav.primary ul");
         $optionSet.find(".selected").removeClass("selected");
         $this.addClass("selected");
-     
-        
-       
+
+
+
     });
 
 
-    
+
     //// Range slider seetings
     $("#slider-range").slider({
         range: true,
         min: 0,
         max: 500,
         values: [75, 300],
-        slide: function(event, ui) {
+        slide: function (event, ui) {
             //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
             $(".minvalue").html("$" + ui.values[0]);
             $(".maxvalue").html("$" + ui.values[1]);
@@ -120,14 +113,14 @@ $(document).ready(function() {
     $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
 
     ////// Increment and decrement select box
-    $(".up").on("click", function() {
+    $(".up").on("click", function () {
         var thisObj = $(this);
         var thisInput = thisObj.parent().find("input");
         var prevVal = parseInt(thisInput.val());
         var newVal = prevVal + 1;
         thisInput.val(newVal);
     });
-    $(".down").on("click", function() {
+    $(".down").on("click", function () {
         var thisObj = $(this);
         var thisInput = thisObj.parent().find("input");
         var prevVal = parseInt(thisInput.val());
@@ -136,9 +129,9 @@ $(document).ready(function() {
             thisInput.val(newVal);
         }
     });
-    
-   
-         
+
+
+
 });
 
 
