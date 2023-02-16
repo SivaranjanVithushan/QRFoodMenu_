@@ -155,8 +155,9 @@ if (empty($_SESSION["user_id"])) {
                                                             <input name="mod" type="radio" value="paypal" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Credit Card<img src="images/paypal.jpg" alt="" width="90"></span> </label>
                                                     </li>
                                                     <li>
-                                                    <label for="custom-control">Table No:</label>
+                                                        <label for="custom-control">Table No:
                                                             <input class="form-control" type="text" name="tableNo"  placeholder="Enter Your Table No" required> <small class="form-text text-muted">before Order Enter the Table No</small>
+                                                        </label>
                                                     </li>
                                                 </ul>
                                                 <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit" class="btn btn-outline-success btn-block" value="Order now"> </p>
